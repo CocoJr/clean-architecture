@@ -1,0 +1,21 @@
+{
+  "name": "cocojr/clean-architecture",
+  "description": "Clean architecture implementation",
+  "type": "library",
+  "authors": [
+    {
+      "name": "CocoJr",
+      "email": "thibaultcolette06@hotmail.fr"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "CocoJr\\CleanArchitecture\\": "src/"
+    }
+  }
+}
