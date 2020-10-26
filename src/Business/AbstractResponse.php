@@ -3,11 +3,8 @@
 namespace CocoJr\CleanArchitecture\Business;
 
 use ArrayIterator;
-use Exception;
-use ReflectionObject;
-use ReflectionProperty;
 
-abstract class AbstractResponse
+abstract class AbstractResponse extends AbstractDTO
 {
     private ?ArrayIterator $errors = null;
 
@@ -45,26 +42,5 @@ abstract class AbstractResponse
     public function isSuccess(): bool
     {
         return empty($this->getErrors());
-    }
-
-    public function toData(): array
-    {
-        $data = [];
-        $reflectionProperties = (new ReflectionObject($this))->getProperties(ReflectionProperty::IS_PUBLIC);
-        foreach ($reflectionProperties as $property) {
-            $data[$property->getName()] = $this->{$property->getName()};
-        }
-
-        return $data;
-    }
-
-    public function __set($name, $value)
-    {
-        throw new Exception("Property ".$name." doesn't exist in ".get_class($this)." class");
-    }
-
-    public function __get($name)
-    {
-        throw new Exception("Property ".$name." doesn't exist in ".get_class($this)." class");
     }
 }
