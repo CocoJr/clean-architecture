@@ -17,4 +17,6 @@ abstract class AbstractMessage
     {
         return $this->request;
     }
+
+    abstract public static function createMessage(): self;
 }
