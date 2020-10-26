@@ -18,5 +18,5 @@ abstract class AbstractMessage
         return $this->request;
     }
 
-    abstract public static function createMessage(): self;
+    abstract public static function createMessage(array $requestProps = []): self;
 }
