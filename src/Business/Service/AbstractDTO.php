@@ -2,14 +2,13 @@
 
 namespace CocoJr\CleanArchitecture\Business\Service;
 
-use ArrayIterator;
 use Exception;
 use ReflectionObject;
 use ReflectionProperty;
 
 abstract class AbstractDTO
 {
-    protected ?ArrayIterator $errors = null;
+    protected ?array $errors = null;
 
     public function toData(): array
     {
@@ -31,7 +30,7 @@ abstract class AbstractDTO
         return $this;
     }
 
-    public function setErrors(ArrayIterator $errors): self
+    public function setErrors(array $errors): self
     {
         $this->errors = $errors;
 
@@ -41,7 +40,7 @@ abstract class AbstractDTO
     public function addError(string $path, string $message): self
     {
         if (!$this->errors) {
-            $this->errors = new ArrayIterator();
+            $this->errors = [];
         }
 
         if (!array_key_exists($path, (array) $this->errors)) {
@@ -53,7 +52,7 @@ abstract class AbstractDTO
         return $this;
     }
 
-    public function getErrors(): ?ArrayIterator
+    public function getErrors(): ?array
     {
         if (!$this->errors || !count($this->errors)) {
             return null;
