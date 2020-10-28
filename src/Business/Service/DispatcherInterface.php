@@ -3,7 +3,7 @@
 namespace CocoJr\CleanArchitecture\Business\Service;
 
 use CocoJr\CleanArchitecture\Business\Message\AbstractMessage;
-use CocoJr\CleanArchitecture\Business\AbstractResponse;
+use CocoJr\CleanArchitecture\Business\Response\AbstractResponse;
 
 interface DispatcherInterface
 {

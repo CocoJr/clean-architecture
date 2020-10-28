@@ -2,7 +2,7 @@
 
 namespace CocoJr\CleanArchitecture\Business\Handler;
 
-use CocoJr\CleanArchitecture\Business\RequestValidatorInterface;
+use CocoJr\CleanArchitecture\Business\Request\Validator\RequestValidatorInterface;
 use CocoJr\CleanArchitecture\Business\Service\CommandDispatcherInterface;
 use CocoJr\CleanArchitecture\Business\Service\QueryDispatcherInterface;
 

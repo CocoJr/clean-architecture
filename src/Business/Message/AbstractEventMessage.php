@@ -2,7 +2,7 @@
 
 namespace CocoJr\CleanArchitecture\Business\Message;
 
-use CocoJr\CleanArchitecture\Business\AbstractRequest;
+use CocoJr\CleanArchitecture\Business\Request\AbstractRequest;
 use DateTime;
 
 abstract class AbstractEventMessage extends AbstractMessage
