@@ -1,6 +1,6 @@
 <?php
 
-namespace CocoJr\CleanArchitecture\Business;
+namespace CocoJr\CleanArchitecture\Business\Service;
 
 use ArrayIterator;
 use Exception;
