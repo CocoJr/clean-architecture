@@ -8,6 +8,8 @@ use CocoJr\CleanArchitecture\Business\Response\AbstractResponse;
 interface DispatcherInterface
 {
     public function dispatch(AbstractMessage $message): object;
+
     public function getResult(object $message): ?object;
+
     public function dispatchAndGetResult(AbstractMessage $message): ?AbstractResponse;
 }

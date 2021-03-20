@@ -16,9 +16,9 @@ You have 4 type of message:
  4. Command  
   
 From your application, dispatch only UseCase.  
-UseCase can dispatch multiple Event, Query and Command.  
-Event can dispatch multiple Query and Command.  
-Command and Query can dispatch Event.  
+ - UseCase can dispatch multiple Event, Query and Command.  
+ - Event can dispatch multiple Query and Command.  
+ - Command and Query can dispatch Event.  
 
 You have to separate your code using 2 folders:
  1. Application for your framework integration (or whatever).

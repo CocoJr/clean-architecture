@@ -16,9 +16,6 @@ abstract class AbstractEventMessage extends AbstractMessage
         parent::__construct($request);
     }
 
-    /**
-     * @return DateTime
-     */
     public function getTriggeredAt(): DateTime
     {
         return $this->triggeredAt;

@@ -10,6 +10,16 @@ abstract class AbstractDTO
 {
     protected ?array $errors = null;
 
+    public function __set($name, $value)
+    {
+        throw new Exception('Property '.$name." doesn't exist in ".get_class($this).' class');
+    }
+
+    public function __get($name)
+    {
+        throw new Exception('Property '.$name." doesn't exist in ".get_class($this).' class');
+    }
+
     public function toData(): array
     {
         $data = [];
@@ -24,7 +34,7 @@ abstract class AbstractDTO
     public function fromData(array $data): self
     {
         foreach ($data as $name => $value) {
-            $this->$name = $value;
+            $this->{$name} = $value;
         }
 
         return $this;
@@ -59,20 +69,5 @@ abstract class AbstractDTO
         }
 
         return $this->errors;
-    }
-
-    public function isSuccess(): bool
-    {
-        return empty($this->getErrors());
-    }
-
-    public function __set($name, $value)
-    {
-        throw new Exception("Property ".$name." doesn't exist in ".get_class($this)." class");
-    }
-
-    public function __get($name)
-    {
-        throw new Exception("Property ".$name." doesn't exist in ".get_class($this)." class");
     }
 }

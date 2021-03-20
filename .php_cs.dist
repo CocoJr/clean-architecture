@@ -1,0 +1,17 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__.'/src')
+    ->exclude('vendor')
+    ->name('*.php')
+    ->ignoreDotFiles(true)
+    ->ignoreVCS(true);
+$config = new PhpCsFixer\Config();
+
+return $config
+    ->setUsingCache(false)
+    ->setRules([
+        '@PSR12' => true,
+        '@PhpCsFixer' => true,
+    ])
+    ->setFinder($finder);
