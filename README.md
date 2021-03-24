@@ -4,7 +4,7 @@
 
 ### Installation
 
-`composer install cocojr/clean-architecture`
+`composer require cocojr/clean-architecture`
 
 ### Usage
 
